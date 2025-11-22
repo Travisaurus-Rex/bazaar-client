@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private readonly baseUrl = 'http://localhost:3000'; // your Nest API
+  private readonly baseUrl = 'http://localhost:3000'; // must update later
 
   constructor(private http: HttpClient) {}
 
