@@ -1,0 +1,37 @@
+<div class="auth-wrapper">
+  <div class="auth-box">
+
+    <div class="bg left"></div>
+    <div class="bg right"></div>
+
+    <div class="slide-box"
+         [class.to-right]="!isLoginMode()"
+         [class.to-left]="isLoginMode()">
+      <div class="slide-content">
+        @if (isLoginMode()) {
+          <app-login></app-login>
+        } @else {
+          <app-register></app-register>
+        }
+      </div>
+    </div>
+
+    @if (!isLoginMode()) {
+      <div class="text left">
+        <h3>Already have an account?</h3>
+        <button (click)="showLogin()">Login</button>
+      </div>
+    }
+
+    @else {
+      <div class="text right">
+        <h3>Don't have an account yet?</h3>
+        <button (click)="showRegister()">Register</button>
+      </div>
+    }
+  </div>
+</div>
+
+
+
+
