@@ -3,7 +3,7 @@ import { tap } from 'rxjs/operators';
 import { jwtDecode } from 'jwt-decode';
 import { ApiService } from './api-service';
 import { Observable } from 'rxjs';
-import { User } from '../../shared/models/user-model';
+import { User } from '@models/user';
 
 interface AuthResponse {
   access_token: string;
