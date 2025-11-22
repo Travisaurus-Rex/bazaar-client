@@ -17,7 +17,7 @@
     "module": "preserve",
     "paths": {
       "@models/*": ["app/shared/models/*"],
-      "@services/*": ["app/core/services/*"]
+      "@services/*": ["app/shared/services/*"]
     }
   },
   "angularCompilerOptions": {

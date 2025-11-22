@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavHeaderComponent } from "./shared/components/nav-component/nav-header";
+import { NavHeaderComponent } from './shared/components/nav-header/nav-header';
 
 @Component({
   selector: 'app-root',
