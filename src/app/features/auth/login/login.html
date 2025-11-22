@@ -7,7 +7,9 @@
 
     <button type="submit">Login</button>
 
-    <p class="error" *ngIf="error()">{{ error() }}</p>
+    @if(error()) {
+      <p class="error">{{ error() }}</p>
+    }
   </form>
 
   <p>
