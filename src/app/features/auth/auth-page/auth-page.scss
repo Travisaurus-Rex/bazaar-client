@@ -75,25 +75,17 @@
   transform: translateX(100%);
 }
 
-/* Form inside the sliding box */
-.slide-content {
-  width: 80%;
-  animation: fadeIn 0.4s ease forwards;
-  opacity: 0;
+.enter-animation {
+  animation: slide-fade ease-in-out 1s;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+@keyframes slide-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.fade {
-  opacity: 0;
-  transition: all 300 ease-in-out;
-}
-
-.fade-active {
-  opacity: 1;
-}
-
 
 

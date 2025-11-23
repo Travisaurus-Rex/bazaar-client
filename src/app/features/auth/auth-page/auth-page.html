@@ -9,9 +9,9 @@
          [class.to-left]="isLoginMode()">
       <div class="slide-content">
         @if (isLoginMode()) {
-          <app-login></app-login>
+          <app-login animate.enter="enter-animation"></app-login>
         } @else {
-          <app-register></app-register>
+          <app-register animate.enter="enter-animation"></app-register>
         }
       </div>
     </div>
