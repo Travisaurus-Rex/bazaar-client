@@ -1,5 +1,51 @@
-<nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/products">Products</a>
-    <a routerLink="/me">Profile</a>
+<nav class="w-full bg-[#6a3fc8] text-white px-6 py-3 flex items-center justify-between">
+  <div class="flex items-center space-x-10">
+    <div class="text-2xl font-bold tracking-wide select-none">
+      Bazaar
+    </div>
+
+    <div class="flex space-x-6 text-sm font-medium">
+        <a routerLink="/about" class="hover:opacity-80 transition">About</a>
+      @if(auth.user()) {
+        <a routerLink="/products" class="hover:opacity-80 transition">Products</a>
+        <a routerLink="/orders" class="hover:opacity-80 transition">Orders</a>
+      }
+
+      @if(auth.user()?.role === 'seller') {
+        <a routerLink="/seller/items" class="hover:opacity-80 transition">
+          My Items
+        </a>
+      }
+    </div>
+  </div>
+
+    @if(auth.user()) {
+        <div class="relative" (click)="toggleMenu()" tabindex="0">
+            <div class="cursor-pointer hover:opacity-80 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    fill="currentColor" viewBox="0 0 24 24"
+                    class="w-8 h-8">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 5a2.5 2.5 0 1 1 0 5 
+                        2.5 2.5 0 0 1 0-5zm0 13c-2.14 0-4.03-.93-5.33-2.4a6.96 6.96 0 0 1 10.66 0 
+                        A8.94 8.94 0 0 1 12 20z"/>
+                </svg>
+            </div>
+
+            @if(menuOpen()) {
+            <div class="absolute right-0 mt-3 w-40 bg-white text-gray-800 rounded-lg shadow-xl py-2 z-20">
+
+                @if(!auth.user()) {
+                <a routerLink="/profile"
+                    class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+
+                <button (click)="logout()"
+                        class="block text-left w-full px-4 py-2 hover:bg-gray-100">
+                    Logout
+                </button>
+                }
+            </div>
+            }
+        </div>
+    }
 </nav>
+
